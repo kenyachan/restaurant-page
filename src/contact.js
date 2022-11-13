@@ -25,9 +25,13 @@ function location() {
     heading.textContent = 'Location';
     location.appendChild(heading);
 
-    const address = document.createElement('p');
-    address.textContent = '123 Totally Real Address, Good Suburb, STATE 2000';
-    location.appendChild(address);
+    const addressLine1 = document.createElement('p');
+    addressLine1.textContent = '123 Totally Real Address';
+    location.appendChild(addressLine1);
+    
+    const addressLine2 = document.createElement('p');
+    addressLine2.textContent = 'Good Suburb, STATE 2000';
+    location.appendChild(addressLine2);
 
     return location;
 }
