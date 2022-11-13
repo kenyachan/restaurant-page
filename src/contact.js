@@ -1,14 +1,19 @@
 export default function contactPage() {
     const contactPage = document.createElement('section');
+    contactPage.setAttribute('id', 'contact-page');
     contactPage.classList.add('page-width');
+
+    const pageBlock = document.createElement('div');
+    pageBlock.classList.add('page-block');
+    contactPage.appendChild(pageBlock);
 
     const pageHeading = document.createElement('h1');
     pageHeading.textContent = 'Contact Us';
-    contactPage.appendChild(pageHeading);
+    pageBlock.appendChild(pageHeading);
 
-    contactPage.appendChild(location());
-    contactPage.appendChild(operatingHours());
-    contactPage.appendChild(phoneNumber());
+    pageBlock.appendChild(location());
+    pageBlock.appendChild(operatingHours());
+    pageBlock.appendChild(phoneNumber());
 
     return contactPage;
 }
