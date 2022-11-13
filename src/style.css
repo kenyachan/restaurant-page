@@ -87,6 +87,10 @@ header {
     color: orange;
 }
 
+.page-block h2 {
+    font-size: larger;
+}
+
 .quote-block p.quote {
     font-style: italic;
 }
@@ -186,4 +190,8 @@ nav a.active::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.info-block :first-child {
+    margin-bottom: 5px;
 }

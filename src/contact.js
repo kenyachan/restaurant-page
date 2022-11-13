@@ -20,6 +20,8 @@ export default function contactPage() {
 
 function location() {
     const location = document.createElement('section');
+    location.setAttribute('id', 'address');
+    location.classList.add('info-block');
 
     const heading = document.createElement('h2');
     heading.textContent = 'Location';
@@ -38,6 +40,8 @@ function location() {
 
 function operatingHours() {
     const operatingHours = document.createElement('section');
+    operatingHours.setAttribute('id', 'operating-hours');
+    operatingHours.classList.add('info-block');
 
     const heading = document.createElement('h2');
     heading.textContent = 'Opening Hours';
@@ -56,6 +60,8 @@ function operatingHours() {
 
 function phoneNumber() {
     const phoneNumber = document.createElement('section');
+    phoneNumber.setAttribute('id', 'phone-number');
+    phoneNumber.classList.add('info-block');
 
     const heading = document.createElement('h2');
     heading.textContent = 'Phone';
