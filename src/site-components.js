@@ -64,19 +64,8 @@ export const Header = () => {
         pageWidth.setAttribute('id', 'header');
         headerElement.appendChild(pageWidth);
 
-        const logo = document.createElement('div');
-        logo.classList.add('logo');
-        pageWidth.appendChild(logo);
-    
-        const logoTop = document.createElement('p');
-        logoTop.classList.add('logo-top');
-        logoTop.textContent = 'K';
-        logo.appendChild(logoTop);
-
-        const logoBottom = document.createElement('p');
-        logoBottom.classList.add('logo-bottom');
-        logoBottom.textContent = 'Kitchen';
-        logo.appendChild(logoBottom);
+        const logo = Logo();
+        pageWidth.appendChild(logo.getLogoElement());
 
         return headerElement;
     }
@@ -147,4 +136,33 @@ export const NavBar = (...nodeNames) => {
         getNavBarElement, 
         getNavLinks,
     }  
+}
+
+export const Logo = () => {
+    const logoElement = createLogoElement();
+
+    function createLogoElement() {
+        const logoElement = document.createElement('div');
+        logoElement.classList.add('logo');
+
+        const logoTop = document.createElement('p');
+        logoTop.classList.add('logo-top');
+        logoTop.textContent = 'K';
+        logoElement.appendChild(logoTop);
+
+        const logoBottom = document.createElement('p');
+        logoBottom.classList.add('logo-bottom');
+        logoBottom.textContent = 'Kitchen';
+        logoElement.appendChild(logoBottom);
+
+        return logoElement;
+    }
+
+    const getLogoElement = () => {
+        return logoElement;
+    }
+
+    return {
+        getLogoElement,
+    }
 }
