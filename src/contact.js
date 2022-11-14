@@ -135,19 +135,3 @@ const PhoneNumber = (phoneNumber) => {
         getPhoneNumberElement,
     }
 }
-
-// function phoneNumber() {
-//     const phoneNumber = document.createElement('section');
-//     phoneNumber.setAttribute('id', 'phone-number');
-//     phoneNumber.classList.add('info-block');
-
-//     const heading = document.createElement('h2');
-//     heading.textContent = 'Phone';
-//     phoneNumber.appendChild(heading);
-
-//     const number = document.createElement('p');
-//     number.textContent = '02 1234 5678';
-//     phoneNumber.appendChild(number);
-
-//     return phoneNumber;
-// }
