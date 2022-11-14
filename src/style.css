@@ -124,6 +124,7 @@ nav ul {
 nav a:hover {
     color: orange;
     cursor: pointer;
+    transition: color 300ms ease;
 }
 
 nav a {
