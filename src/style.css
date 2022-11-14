@@ -27,12 +27,18 @@ main {
     justify-content: center;
 }
 
-header {
+body > header {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 5rem;
     background-color: var(--background);
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -55,14 +61,8 @@ header {
     color: var(--lightgrey);
 }
 
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .page-width {
-    width: clamp(500px, 50vw, 1200px);
+    width: clamp(500px, 75vw, 1200px);
     padding: 0 2rem;
 }
 
@@ -99,13 +99,6 @@ header {
     text-align: right;
 }
 
-nav ul {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    list-style: none;
-}
-
 footer {
     display: flex;
     justify-content: center;
@@ -119,30 +112,14 @@ footer a {
     color: orange;
 }
 
-.menu-item img {
-    max-height: 200px;
+/* Navigation */
 
-    border-radius: 10px 10px 0 0;
-}
-
-.menu-item {
-    display: grid;
-    grid-template-rows: auto auto;
-    gap: 1rem;
-
-    width: fit-content;
-    background-color: var(--lightgrey);
-
-    border-radius: 10px;
-}
-
-.menu-item-text {
+nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 2rem;
+    list-style: none;
 }
-
-/* Navigation */
 
 nav a:hover {
     color: orange;
@@ -194,4 +171,42 @@ nav a.active::after {
 
 .info-block :first-child {
     margin-bottom: 5px;
+}
+
+#content h1 {
+    font-family: "Alex Brush";
+    font-size: 3rem;
+    color: orange;
+    
+    text-align: center;
+    padding: 1rem;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+}
+
+#content main {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    max-width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menu-item img{
+    max-width: 100%;
+}
+
+.menu-item p {
+    padding: 0.5rem
+}
+
+.menu-item .price {
+    text-align: right;
 }

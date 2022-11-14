@@ -1,12 +1,36 @@
-import pastaImage from './pasta.jpeg';
+import pastaImage from './penne.jpeg';
 
 export default function menuPage() {
     const menuPage = document.createElement('section');
     menuPage.classList.add('page-width');
+    menuPage.setAttribute('id', 'menu-page');
 
-    const menuItem = MenuItem('Pasta', '$12.50', pastaImage);
-    menuPage.appendChild(menuItem.getMenuItemElement());
+    const header = document.createElement('header');
+    const heading = document.createElement('h1');
+    heading.textContent = 'Menu';
+    header.appendChild(heading);
+    menuPage.appendChild(header);
 
+    const main = document.createElement('main');
+    menuPage.appendChild(main);
+
+    const menuItem = MenuItem('Penne with tomato meat bolognese sauce and basil', '$12.50', pastaImage);
+    main.appendChild(menuItem.getMenuItemElement());
+
+    const menuItem2 = MenuItem('Penne with tomato meat bolognese sauce and basil', '$12.50', pastaImage);
+    main.appendChild(menuItem2.getMenuItemElement());
+
+    const menuItem3 = MenuItem('Penne with tomato meat bolognese sauce and basil', '$12.50', pastaImage);
+    main.appendChild(menuItem3.getMenuItemElement());
+
+    const menuItem4 = MenuItem('Penne with tomato meat bolognese sauce and basil', '$12.50', pastaImage);
+    main.appendChild(menuItem4.getMenuItemElement());
+
+    const menuItem5 = MenuItem('Penne with tomato meat bolognese sauce and basil', '$12.50', pastaImage);
+    main.appendChild(menuItem5.getMenuItemElement());
+
+    const menuItem6 = MenuItem('Penne with tomato meat bolognese sauce and basil', '$12.50', pastaImage);
+    main.appendChild(menuItem6.getMenuItemElement());
     return menuPage;
 }
 
@@ -22,19 +46,15 @@ const MenuItem = (name, price, imageSrc) => {
         img.src = imageSrc;
         menuItemElement.appendChild(img);
 
-        const itemText = document.createElement('div');
-        itemText.classList.add('menu-item-text');
-        menuItemElement.appendChild(itemText);
-
         const itemName = document.createElement('p');
-        itemName.classList.add('menu-item-name');
+        itemName.classList.add('description');
         itemName.textContent = name;
-        itemText.appendChild(itemName);
+        menuItemElement.appendChild(itemName);
 
         const itemPrice = document.createElement('p');
-        itemPrice.classList.add('menu-item-price');
+        itemPrice.classList.add('price');
         itemPrice.textContent = price;
-        itemText.appendChild(itemPrice);    
+        menuItemElement.appendChild(itemPrice);    
 
         return menuItemElement;
     }
