@@ -70,26 +70,6 @@ const Location = (number, street, suburb, state, postCode) => {
     }
 }
 
-// function location() {
-//     const location = document.createElement('section');
-//     location.setAttribute('id', 'address');
-//     location.classList.add('info-block');
-
-//     const heading = document.createElement('h2');
-//     heading.textContent = 'Location';
-//     location.appendChild(heading);
-
-//     const addressLine1 = document.createElement('p');
-//     addressLine1.textContent = '123 Totally Real Address';
-//     location.appendChild(addressLine1);
-    
-//     const addressLine2 = document.createElement('p');
-//     addressLine2.textContent = 'Good Suburb, STATE 2000';
-//     location.appendChild(addressLine2);
-
-//     return location;
-// }
-
 function operatingHours() {
     const operatingHours = document.createElement('section');
     operatingHours.setAttribute('id', 'operating-hours');
