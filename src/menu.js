@@ -2,9 +2,9 @@ import pastaImage from './penne.jpeg';
 
 export default function menuPage() {
     const menuPage = document.createElement('section');
+    menuPage.setAttribute('id', 'menu-page');
     menuPage.classList.add('page-width');
     menuPage.classList.add('page');
-    menuPage.setAttribute('id', 'menu-page');
 
     const header = document.createElement('header');
     const heading = document.createElement('h1');
