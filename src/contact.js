@@ -12,10 +12,10 @@ export default function contactPage() {
     pageBlock.appendChild(pageHeading);
 
     const location = Location('123', 'Fake St', 'Suburb', 'STATE', '2000');
-    const locationElement = location.getLocationElement();
+    const operatingHours = OperatingHours('Monday to Sunday', '11am - late');
 
-    pageBlock.appendChild(locationElement);
-    pageBlock.appendChild(operatingHours());
+    pageBlock.appendChild(location.getLocationElement());
+    pageBlock.appendChild(operatingHours.getOperatingHoursElement());
     pageBlock.appendChild(phoneNumber());
 
     return contactPage;
@@ -70,24 +70,36 @@ const Location = (number, street, suburb, state, postCode) => {
     }
 }
 
-function operatingHours() {
-    const operatingHours = document.createElement('section');
-    operatingHours.setAttribute('id', 'operating-hours');
-    operatingHours.classList.add('info-block');
+const OperatingHours = (days, times) => {
+    const operatingHoursElement = createOperatingHoursElement(days, times);
 
-    const heading = document.createElement('h2');
-    heading.textContent = 'Opening Hours';
-    operatingHours.appendChild(heading);
+    function createOperatingHoursElement(days, times) {
+        const operatingHoursElement = document.createElement('section');
+        operatingHoursElement.setAttribute('id', 'operating-hours');
+        operatingHoursElement.classList.add('info-block');    
 
-    const days = document.createElement('p');
-    days.textContent = 'Monday to Sunday';
-    operatingHours.appendChild(days);
+        const heading = document.createElement('h2');
+        heading.textContent = 'Opening Hours';
+        operatingHoursElement.appendChild(heading);
 
-    const hours = document.createElement('p');
-    hours.textContent = '11am - late';
-    operatingHours.appendChild(hours);
+        const daysLine = document.createElement('p');
+        daysLine.textContent = days;
+        operatingHoursElement.appendChild(daysLine);
 
-    return operatingHours;
+        const hours = document.createElement('p');
+        hours.textContent = times;
+        operatingHoursElement.appendChild(hours);
+
+        return operatingHoursElement;
+    }
+    
+    const getOperatingHoursElement = () => {
+        return operatingHoursElement;
+    }
+
+    return {
+        getOperatingHoursElement,
+    }
 }
 
 function phoneNumber() {
