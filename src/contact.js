@@ -13,10 +13,11 @@ export default function contactPage() {
 
     const location = Location('123', 'Fake St', 'Suburb', 'STATE', '2000');
     const operatingHours = OperatingHours('Monday to Sunday', '11am - late');
+    const phoneNumber = PhoneNumber('+61 2 1234 5678');
 
     pageBlock.appendChild(location.getLocationElement());
     pageBlock.appendChild(operatingHours.getOperatingHoursElement());
-    pageBlock.appendChild(phoneNumber());
+    pageBlock.appendChild(phoneNumber.getPhoneNumberElement());
 
     return contactPage;
 }
@@ -102,18 +103,51 @@ const OperatingHours = (days, times) => {
     }
 }
 
-function phoneNumber() {
-    const phoneNumber = document.createElement('section');
-    phoneNumber.setAttribute('id', 'phone-number');
-    phoneNumber.classList.add('info-block');
+const PhoneNumber = (phoneNumber) => {
+    const phoneNumberElement = createPhoneNumberElement(phoneNumber);
 
-    const heading = document.createElement('h2');
-    heading.textContent = 'Phone';
-    phoneNumber.appendChild(heading);
+    function createPhoneNumberElement(phoneNumber) {
+        const phoneNumberElement = document.createElement('section');
+        phoneNumberElement.setAttribute('id', 'phone-number');
+        phoneNumberElement.classList.add('info-block');
 
-    const number = document.createElement('p');
-    number.textContent = '02 1234 5678';
-    phoneNumber.appendChild(number);
+        const heading = document.createElement('h2');
+        heading.textContent = 'Phone';
+        phoneNumberElement.appendChild(heading);
 
-    return phoneNumber;
+        const number = document.createElement('p');
+        number.textContent = phoneNumber;
+        phoneNumberElement.appendChild(number);    
+
+        return phoneNumberElement;
+    }
+
+    const getPhoneNumberElement = () => {
+        return phoneNumberElement;
+    }
+
+    const getPhoneNumber = () => {
+        return phoneNumber;
+    }
+
+    return {
+        getPhoneNumber,
+        getPhoneNumberElement,
+    }
 }
+
+// function phoneNumber() {
+//     const phoneNumber = document.createElement('section');
+//     phoneNumber.setAttribute('id', 'phone-number');
+//     phoneNumber.classList.add('info-block');
+
+//     const heading = document.createElement('h2');
+//     heading.textContent = 'Phone';
+//     phoneNumber.appendChild(heading);
+
+//     const number = document.createElement('p');
+//     number.textContent = '02 1234 5678';
+//     phoneNumber.appendChild(number);
+
+//     return phoneNumber;
+// }
