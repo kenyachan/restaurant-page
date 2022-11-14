@@ -2,22 +2,24 @@ export default function contactPage() {
     const contactPage = document.createElement('section');
     contactPage.setAttribute('id', 'contact-page');
     contactPage.classList.add('page-width');
+    contactPage.classList.add('page');
 
-    const pageBlock = document.createElement('div');
-    pageBlock.classList.add('page-block');
-    contactPage.appendChild(pageBlock);
+    const header = document.createElement('header');
+    const heading = document.createElement('h1');
+    heading.textContent = "Contact Us";
+    header.appendChild(heading);
+    contactPage.appendChild(header);
 
-    const pageHeading = document.createElement('h1');
-    pageHeading.textContent = 'Contact Us';
-    pageBlock.appendChild(pageHeading);
+    const main = document.createElement('main');
+    contactPage.appendChild(main);
 
     const location = Location('123', 'Fake St', 'Suburb', 'STATE', '2000');
     const operatingHours = OperatingHours('Monday to Sunday', '11am - late');
     const phoneNumber = PhoneNumber('+61 2 1234 5678');
 
-    pageBlock.appendChild(location.getLocationElement());
-    pageBlock.appendChild(operatingHours.getOperatingHoursElement());
-    pageBlock.appendChild(phoneNumber.getPhoneNumberElement());
+    main.appendChild(location.getLocationElement());
+    main.appendChild(operatingHours.getOperatingHoursElement());
+    main.appendChild(phoneNumber.getPhoneNumberElement());
 
     return contactPage;
 }

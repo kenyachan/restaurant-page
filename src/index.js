@@ -3,16 +3,16 @@ import * as siteComponents from './site-components';
 import contactPage from './contact';
 import homePage from './home';
 import menuPage from './menu';
-import heroImgSrc from './hero.jpeg';
+import backgroundImgSrc from './background.jpeg';
 
 const body = document.querySelector('body');
 
-const heroImg = new Image();
-heroImg.src = heroImgSrc;
-heroImg.setAttribute('id', 'hero-img');
-heroImg.classList.add('hero');
+const backgroundImg = new Image();
+backgroundImg.src = backgroundImgSrc;
+backgroundImg.setAttribute('id', 'background-img');
+backgroundImg.classList.add('background-img');
 
-body.appendChild(heroImg);
+body.appendChild(backgroundImg);
 
 const header = siteComponents.Header();
 const headerElement = header.getHeaderElement();

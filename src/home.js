@@ -2,6 +2,7 @@ export default function homePage() {
     const homePage = document.createElement('section');
     homePage.setAttribute('id', 'home-page');
     homePage.classList.add('page-width');
+    homePage.classList.add('page');
 
     const quoteBlock = document.createElement('div');
     quoteBlock.classList.add('quote-block');
