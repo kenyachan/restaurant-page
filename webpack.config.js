@@ -6,8 +6,10 @@ module.exports = {
     mode: 'development',
     entry: {
         index: './src/index.js',
-        // header: './src/header.js',
-        // footer: './src/footer.js',
+		contact: './src/contact.js',
+		home: './src/home.js',
+		menu: './src/menu.js',
+		siteComponents: './src/site-components.js',
     },
     devtool: 'inline-source-map',
 	plugins: [
@@ -16,7 +18,7 @@ module.exports = {
 		}),
 	],
     output: {
-        filename: 'main.js',
+        filename: '[name].main.js',
         path: path.resolve(__dirname, 'dist'),
 		clean: true,
     },
