@@ -29,7 +29,7 @@ body {
 }
 
 .background-img {
-    position: absolute;
+    position: fixed;
     z-index: -1;
 
     object-fit: cover;
