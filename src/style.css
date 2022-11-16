@@ -1,5 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Alex+Brush);
-@import url(http://fonts.googleapis.com/css?family=Noto+Serif);
+@font-face {
+	font-family: 'Alex Brush';
+	src: url('./AlexBrush-Regular.ttf') format(truetype);
+}
+
+@font-face {
+	font-family: 'Noto Serif';
+	src: url('./NotoSerif-Regular.ttf') format(truetype);
+}
 
 :root {
     font-family: 'Noto Serif';
