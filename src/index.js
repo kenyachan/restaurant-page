@@ -15,24 +15,24 @@ backgroundImg.classList.add('background-img');
 body.appendChild(backgroundImg);
 
 const header = siteComponents.Header();
-const headerElement = header.getHeaderElement();
+const headerElement = header.getElement();
 
 const navbar = siteComponents.NavBar('Home', 'Menu', 'Contact');
-headerElement.querySelector('.page-width').appendChild(navbar.getNavBarElement());
-
-const navBarElement = navbar.getNavBarElement();
+const navBarElement = navbar.getElement();
 const homeLink = navBarElement.querySelector('#home');
 const menuLink = navBarElement.querySelector('#menu');
 const contactLink = navBarElement.querySelector('#contact');
 
 homeLink.classList.add('active');
 
+headerElement.querySelector('.page-width').appendChild(navBarElement);
+
 const content = document.createElement('main');
 content.setAttribute('id', 'content');
 content.appendChild(homePage());
 
 const footer = siteComponents.Footer();
-const footerElement = footer.getFooterElement();
+const footerElement = footer.getElement();
 
 body.appendChild(headerElement);
 body.appendChild(content);

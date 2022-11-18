@@ -1,25 +1,25 @@
-export function quoteComponent() {
-    const quoteComponent = document.createElement('p');
+// export function quoteComponent() {
+//     const quoteComponent = document.createElement('p');
 
-    const quoteText = 'This restaurant is awesome!';
+//     const quoteText = 'This restaurant is awesome!';
 
-    quoteComponent.textContent = quoteText;
+//     quoteComponent.textContent = quoteText;
 
-    return quoteComponent;
-}
+//     return quoteComponent;
+// }
 
-export function heroImageComponent() {
-    const heroImageComponent = document.createElement('img');
+// export function heroImageComponent() {
+//     const heroImageComponent = document.createElement('img');
 
-    const imgSrc = "../src/pasta.jpeg";
+//     const imgSrc = "../src/pasta.jpeg";
 
-    heroImageComponent.setAttribute('src', imgSrc);
+//     heroImageComponent.setAttribute('src', imgSrc);
 
-    return heroImageComponent;
-}
+//     return heroImageComponent;
+// }
 
 export const Footer = () => {
-    const footerElement =  createFooter();
+    const element =  createFooter();
 
     function createFooter() {
         const footerElement = document.createElement('footer');
@@ -44,17 +44,17 @@ export const Footer = () => {
         return footerElement;
     }
 
-    const getFooterElement = () => {
-        return footerElement;
+    const getElement = () => {
+        return element;
     }
 
     return {
-        getFooterElement,
+        getElement,
     }
 }
 
 export const Header = () => {
-    const headerElement = createHeader();
+    const element = createHeader();
     
     function createHeader() {
         const headerElement = document.createElement('header');
@@ -65,23 +65,23 @@ export const Header = () => {
         headerElement.appendChild(pageWidth);
 
         const logo = Logo();
-        pageWidth.appendChild(logo.getLogoElement());
+        pageWidth.appendChild(logo.getElement());
 
         return headerElement;
     }
 
-    const getHeaderElement = () => {
-        return headerElement;
+    const getElement = () => {
+        return element;
     }
 
     return {
-        getHeaderElement,
+        getElement,
     }
 }
 
 export const NavBar = (...nodeNames) => {
     const navLinks = [];
-    const navBarElement = createNavElement();
+    const element = createNavElement();
 
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
@@ -98,17 +98,17 @@ export const NavBar = (...nodeNames) => {
     }
 
     function createNavElement() {
-        const navbar = document.createElement('nav');
+        const navBarElement = document.createElement('nav');
 
         const list = document.createElement('ul');
-        navbar.appendChild(list);
+        navBarElement.appendChild(list);
 
         nodeNames.forEach(name => {
             const node = createNavLink(name);
             list.appendChild(node);
         });
         
-        return navbar;
+        return navBarElement;
     }
 
     function createNavLink(name) {
@@ -124,8 +124,8 @@ export const NavBar = (...nodeNames) => {
         return listItem;
     }
 
-    const getNavBarElement = () => {
-        return navBarElement;
+    const getElement = () => {
+        return element;
     }
 
     const getNavLinks = () => {
@@ -133,13 +133,13 @@ export const NavBar = (...nodeNames) => {
     }
 
     return {
-        getNavBarElement, 
+        getElement, 
         getNavLinks,
     }  
 }
 
 export const Logo = () => {
-    const logoElement = createLogoElement();
+    const element = createLogoElement();
 
     function createLogoElement() {
         const logoElement = document.createElement('div');
@@ -158,11 +158,11 @@ export const Logo = () => {
         return logoElement;
     }
 
-    const getLogoElement = () => {
-        return logoElement;
+    const getElement = () => {
+        return element;
     }
 
     return {
-        getLogoElement,
+        getElement,
     }
 }
